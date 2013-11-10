@@ -1,0 +1,75 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
+	version="2.5">
+	
+	<display-name>Galileo</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- USE THESE SETTINGS IF DEPLOYING TO JBOSS - USING RESTEASY -->
+
+	<listener>
+		<listener-class>
+			org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+		</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>Resteasy</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Resteasy</servlet-name>
+		<url-pattern>/auction-data/*</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/auction-data</param-value>
+	</context-param>
+
+<!-- JBAS011204: resteasy.scan found and ignored in web.xml. 
+This is not necessary, as Resteasy will use the container integration 
+in the JAX-RS 1.1 specification in section 2.3.2
+	<context-param>
+		<param-name>resteasy.scan</param-name>
+		<param-value>true</param-value>
+	</context-param-->
+
+	<context-param>
+		<param-name>resteasy.resources</param-name>
+		<param-value>com.baker.david.quick.computer.controller.AuctionController,com.baker.david.quick.computer.controller.ContactUsController</param-value>
+	</context-param>
+	
+	
+	 <!-- USE THESE SETTINGS FOR TOMCAT >
+
+	<servlet>
+		<servlet-name>jersey-servlet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer
+		</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.baker.david.quick.computer.controller</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jersey-servlet</servlet-name>
+		<url-pattern>/auction-data/*</url-pattern>
+	</servlet-mapping-->
+
+
+
+
+</web-app>
