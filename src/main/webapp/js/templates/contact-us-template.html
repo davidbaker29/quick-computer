@@ -1,0 +1,36 @@
+<p>
+	For any issues or questions that you have about our reverse auction process, please complete and submit the form below. 
+	A Mercury Computers customer service representative will contact you via email within 3 business days and likely sooner.
+</p>
+<p>
+	Before submitting your form, please visit our <a href="faq.html">FAQ</a> for immediate answers to the most common 
+	questions that our suppliers and customers ask. 
+</p>
+
+<form id="contactUsForm" action="#" method="post">
+	<label>Fields marked with an asterisk * are required.</label>
+	
+	<fieldset>
+		<table id="contactTable">
+			<tr><td>* Name: </td><td><input type="text" name="personName" placeholder="Name" required autofocus></input></td></tr>
+			<tr><td>* Company: </td><td><input type="text" name="companyName" placeholder="Company" required></input></td></tr>
+			<tr><td>* Email: </td><td><input type="email" name="email" placeholder="Email" required></td></tr>
+					<tr><td>Phone: </td><td><input type="text" name="phone" placeholder="Phone"></input></td></tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<table id="questionTable">
+			<tr>
+				<td>* Are you a registered supplier with Quick Computer?</td>
+				<td><input type="radio" name="existingSupplier" value="supplier"/>Yes
+					<input type="radio" name="existingSupplier" value="notSupplier" checked="checked"/>No
+				</td>					
+			</tr>
+			<tr><td>If yes, please enter your supplier ID code:</td><td colspan="2"><input type="text" name="supplierID" placeholder="Supplier ID Code"></input></td></tr>
+			<tr><td>* Question / Problem Description: </td><td colspan="2"><textarea name="issue" placeholder="Question" required></textarea></td></tr>
+		</table>
+	</fieldset>
+	
+	<input type="submit" value="Submit">
+</form>

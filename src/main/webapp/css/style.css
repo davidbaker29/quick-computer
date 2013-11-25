@@ -105,6 +105,12 @@
 body {
 	font-family: 'Rokkitt', sans-serif;
 	font-size: 1.2em;
+	color: #3D3D36;
+;
+}
+
+#newBid {
+	margin: 10px;
 }
 
 p, #myFooter, form, table {
@@ -211,7 +217,7 @@ p {
 	height: 300px;
 }
 
-#intro{
+#intro {
 	position: relative;
 	float: left;
 	left: 10px;
@@ -232,7 +238,7 @@ p {
 	padding-top: 25px;
 }
 
-#latestAuctionsHeader {
+#latestAuctionsHeader, #bidsHeader, #auctionDetailsHeader {
 	/* font-family: font-family: Arial, Helvetica, sans-serif; */
 	font-weight: normal;		
 	margin: 25px 0px 15px 10px;
@@ -307,7 +313,7 @@ fieldset{
 	/*background-image: -webkit-gradient(linear, 0% 0%, 0% 12%, from(#999), to(#fff)); The pulse doesn't work if this is in*/
 }
 
-#questionTable input[type=text]{
+#questionTable input[type=text], #newBid{
 	width: 200px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -320,7 +326,7 @@ fieldset{
 	-webkit-animation: pulse 3s infinite ease-in-out;
 }
 
-#questionTable input[type=text]:focus{
+#questionTable input[type=text]:focus, #newBid:focus{
 	-webkit-animation: pulse 3s infinite ease-in-out;
 }
 
@@ -328,17 +334,23 @@ fieldset{
 	-webkit-animation: pulse 3s infinite ease-in-out;
 }
 
-#contactUsForm input[type=submit]{
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	-o-border-radius: 15px;
-	border-radius: 15px;
+#contactUsForm input[type=submit], #submitBidBtn {
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 12px;
 	/*background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CFCFCF), to(#858585), color-stop(.6,#ABABAB));*/
 }
 
 #contactUsForm input[type=submit]:hover,
-#contactUsForm input[type=submit]:focus{
+#contactUsForm input[type=submit]:focus,
+#submitBidBtn:hover,
+#submitBidBtn:focus{
 	-webkit-animation: pulse 1.5s infinite ease-in-out;
+}
+
+#newBid:focus{
+	-webkit-animation: pulse 3s infinite ease-in-out;
 }
 
 .auctionItem:hover{
@@ -348,4 +360,42 @@ fieldset{
 	transform: rotate(3deg);
 	
 	height: 180px;
+}
+
+#bidPageAuctionSlogans {
+	position: relative;
+	float: left;
+	padding: 0px 0px 0px 20px;
+}
+
+#bidResultSuccess, #bidResultFail {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 0px 0px 0px 20px;
+}
+
+#bidResultFail {
+	color: red;
+}
+
+	color: red;
+
+#frmSubmitBid {
+	display: block;
+}
+
+#bidPageAuctionValues {
+	position: relative;
+	float: left;
+	left: 10px;
+	width: 75%;
+}
+#bestBidOnAuction, .bidPageAuctionValue {
+	background-image: -webkit-gradient(linear, 0% 100%, 100% 100%, from(#FFFFFF), to(#FFFFFF), color-stop(0,#A3CAD7));
+	-webkit-border-radius: 5px;
+}
+
+#bestBidOnAuction {
+	font-weight: bold;
 }

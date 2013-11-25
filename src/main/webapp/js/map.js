@@ -1,11 +1,23 @@
-window.onload = function(){
-	if (navigator.geolocation) {
-	  navigator.geolocation.getCurrentPosition(success, error);
-	} 
-	else {
-	  error('not supported');
-	}	
-}
+define(['async!http://maps.google.com/maps/api/js?sensor=false'], function(){
+	
+//See https://github.com/millermedeiros/requirejs-plugins and 
+//https://groups.google.com/forum/#!topic/requirejs/lOf0-3FADjc
+//Without the async dependency on google there's an error at this line:
+//var latlng = new google.maps.LatLng(20.378745, -30.300293);
+//as maps are not loaded
+	
+	console.log('Executing map support');
+	return{
+		loadMap:function(){
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(success, error);
+			} 
+			else {
+				error('not supported');
+			}	
+		}
+	};
+});
 
 function success(position) {
 	var mapcanvas = document.getElementById("mapCanvas");
@@ -13,7 +25,6 @@ function success(position) {
 	mapcanvas.style.height = '400px';
 	mapcanvas.style.width = '560px';
 	    
-	//document.querySelector('mapHolder2').appendChild(mapcanvas);
 	document.getElementById('mapHolder').appendChild(mapcanvas);
 	
 //	var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);

@@ -10,26 +10,30 @@ import com.baker.david.quick.computer.dao.InMemoryAuctionsDao;
 
 public class AuctionControllerTest {
 	
-	AuctionController controller;
+	AuctionController auctionController;
+	
+	BidController bidController;
 
 	@Before
 	public void init(){
-		controller = new AuctionController();
-
+		auctionController = new AuctionController();
+		bidController = new BidController();
+		auctionController.setBidController(bidController);
 		//TODO: change to interface 
 		//IAuctionController controller = new AuctionController();
-		controller.setAuctionsDAO(new InMemoryAuctionsDao());
+		auctionController.setAuctionsDAO(new InMemoryAuctionsDao());
+		bidController.setAuctionsDAO(new InMemoryAuctionsDao());
 	}
 
 	
 	@Test
 	public void testGetAllAuctions(){		
-		assertTrue(controller.getAllAuctions().size() > 0);
+		assertTrue(auctionController.getAllAuctions().size() > 0);
 	}
 	
 	@Test
 	public void testGetAuction(){		
-		assertEquals(controller.getAuction(1).getBestBid(),1000);
+		assertEquals(auctionController.getAuction(1).getBestBid(),1000,0);
 	}
  
 }

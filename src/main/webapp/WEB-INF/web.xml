@@ -44,7 +44,9 @@ in the JAX-RS 1.1 specification in section 2.3.2
 
 	<context-param>
 		<param-name>resteasy.resources</param-name>
-		<param-value>com.baker.david.quick.computer.controller.AuctionController,com.baker.david.quick.computer.controller.ContactUsController</param-value>
+		<param-value>com.baker.david.quick.computer.controller.AuctionController,com.baker.david.quick.computer.controller.ContactUsController,
+		com.baker.david.quick.computer.controller.BidController
+		</param-value>
 	</context-param>
 	
 	

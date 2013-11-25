@@ -1,11 +1,11 @@
-define(['backbone', 'collection/contacts'],
-function (Backbone, Contacts) {
+define(['backbone', 'collection/contacts', 'text!templates/contact-us-template.html'],
+function (Backbone, Contacts, ContactUs) {
     
     var ContactUsView = Backbone.View.extend({
         
         el: '#intro',
 
-        template: _.template( $('#contact-us-template').html()),
+        template: _.template(ContactUs),
 
         initialize: function(){
         	
@@ -16,10 +16,11 @@ function (Backbone, Contacts) {
 
         render: function(){
         	this.$el.html(this.template());
+        	return this;
         },
         
         events: {
-            'submit': 'submitContactForm'
+            'submit #contactUsForm': 'submitContactForm'
           },
           
         submitContactForm: function (event) {

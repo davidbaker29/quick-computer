@@ -1,20 +1,23 @@
 package com.baker.david.quick.computer.model;
 
+import java.util.Collection;
+
 
 public class Auction {
 	
-	private long id;
+	private int id;
     private String name;
     private PartType partType;
     private int requiredQuantity;
-    private int bestBid;
+    private double bestBid;
+    private Collection<Bid> bids;
     private String closingDate;
     
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
@@ -42,13 +45,6 @@ public class Auction {
 		this.requiredQuantity = requiredQuantity;
 	}
 	
-	public int getBestBid() {
-		return bestBid;
-	}
-	public void setBestBid(int bestBid) {
-		this.bestBid = bestBid;
-	}
-	
 	public String getClosingDate() {
 		return closingDate;
 	}
@@ -56,5 +52,23 @@ public class Auction {
 	public void setClosingDate(String closingDate) {
 		this.closingDate = closingDate;
 	}
+
+	public double getBestBid() {
+		return bestBid;
+	}
+
+	public void setBestBid(double bestBid) {
+		this.bestBid = bestBid;
+	}
+
+	public Collection<Bid> getBids() {
+		return bids;
+	}
+
+	public void setBids(Collection<Bid> bids) {
+		this.bids = bids;
+	}
+	
+	
     
 }

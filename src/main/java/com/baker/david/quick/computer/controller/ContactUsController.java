@@ -6,7 +6,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
-import com.baker.david.quick.computer.dao.EMailDAO;
 import com.baker.david.quick.computer.dao.IEmailDAO;
 import com.baker.david.quick.computer.model.ContactDetails;
 

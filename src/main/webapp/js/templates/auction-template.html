@@ -1,0 +1,19 @@
+<tr class="auctionItem">
+	<td><a href="#bids/<%= id %>"><%= name %></td>
+						
+	<% if (partType=="RAM") { %>
+					<td><img class="auctionTableImg" src="img/ram1.jpg" alt="RAM" title="RAM"/></td>
+	<% } 
+	else if (partType=="CPU") {%>
+		<td><img class="auctionTableImg" src="img/cpu1.jpg" alt="Processor" title="Processor"/></td>
+	<% }
+	else if (partType=="HDD") {%>
+		<td><img class="auctionTableImg" src="img/hdd1.jpg" alt="Hard Disk Drive" title="Hard Disk Drive"/></td>
+	<% }  
+	else {%>
+		<td><%= partType %></td>
+	<% } %>
+	<td><%= requiredQuantity %></td>
+	<td><%= bestBid %></td>
+	<td><%= closingDate %></td>
+</tr>	
